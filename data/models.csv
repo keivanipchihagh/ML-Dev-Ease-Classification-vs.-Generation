@@ -1,0 +1,41 @@
+name,tag,updated_at,downloads,likes
+ProsusAI/finbert,Text Classification, UpdatedMay 23, 2.37M, 376
+distilbert-base-uncased-finetuned-sst-2-english,Text Classification, Updated20 days ago, 42.1M, 341
+cardiffnlp/twitter-roberta-base-sentiment-latest,Text Classification, UpdatedMay 28, 1.26M, 259
+j-hartmann/emotion-english-distilroberta-base,Text Classification, UpdatedJan 2, 851k, 247
+cardiffnlp/twitter-roberta-base-sentiment,Text Classification, UpdatedJan 20, 10.1M, 220
+nlptown/bert-base-multilingual-uncased-sentiment,Text Classification, UpdatedJul 27, 1.73M, 201
+SamLowe/roberta-base-go_emotions,Text Classification, UpdatedOct 4, 6.57M, 171
+papluca/xlm-roberta-base-language-detection,Text Classification, Updated6 days ago, 397k, 150
+cardiffnlp/twitter-xlm-roberta-base-sentiment,Text Classification, UpdatedJul 19, 1.11M, 148
+OpenAssistant/reward-model-deberta-v3-large-v2,Text Classification, UpdatedFeb 1, 75.4k, 119
+mrm8488/distilroberta-finetuned-financial-news-sentiment-analysis,Text Classification, UpdatedMar 16, 6.03M, 114
+yiyanghkust/finbert-tone,Text Classification," UpdatedOct 17, 2022", 558k, 106
+roberta-large-mnli,Text Classification, UpdatedApr 6, 82.5k, 94
+unitary/toxic-bert,Text Classification, UpdatedAug 18, 87.3k, 89
+bhadresh-savani/distilbert-base-uncased-emotion,Text Classification, UpdatedMar 22, 76.8k, 86
+finiteautomata/bertweet-base-sentiment-analysis,Text Classification, UpdatedFeb 17, 146k, 85
+siebert/sentiment-roberta-large-english,Text Classification, UpdatedApr 2, 167k, 84
+roberta-base-openai-detector,Text Classification, UpdatedApr 30, 34.4k, 82
+arpanghoshal/EmoRoBERTa,Text Classification, UpdatedFeb 11, 12.6k, 79
+facebook/fasttext-language-identification,Text Classification, UpdatedJun 9,0, 65
+bigscience/bloom,Text Generation, UpdatedJul 28, 20.4k, 4.14k
+meta-llama/Llama-2-7b,Text Generation, Updated1 day ago,0, 2.97k
+bigcode/starcoder,Text Generation, UpdatedOct 5, 24.5k, 2.45k
+tiiuae/falcon-40b,Text Generation, UpdatedSep 29, 56.2k, 2.33k
+databricks/dolly-v2-12b,Text Generation, UpdatedJun 30, 13k, 1.89k
+mistralai/Mistral-7B-v0.1,Text Generation, UpdatedOct 12, 427k, 1.79k
+meta-llama/Llama-2-7b-chat-hf,Text Generation, Updated1 day ago, 876k, 1.77k
+meta-llama/Llama-2-70b-chat-hf,Text Generation, Updated1 day ago, 1.7M, 1.6k
+gpt2,Text Generation, UpdatedJun 30, 25.9M, 1.49k
+EleutherAI/gpt-j-6b,Text Generation, UpdatedJun 21, 128k, 1.3k
+tiiuae/falcon-40b-instruct,Text Generation, UpdatedSep 29, 782k, 1.11k
+mosaicml/mpt-7b,Text Generation, Updated15 days ago, 84.4k, 1.09k
+microsoft/phi-1_5,Text Generation, Updated13 days ago, 72.6k, 1.03k
+mistralai/Mistral-7B-Instruct-v0.1,Text Generation, UpdatedOct 11, 272k, 1.01k
+HuggingFaceH4/zephyr-7b-alpha,Text Generation, Updated20 days ago, 90.3k, 947
+tiiuae/falcon-7b,Text Generation, UpdatedSep 29, 132k, 918
+tiiuae/falcon-180B,Text Generation, UpdatedSep 6, 16.2k, 899
+stabilityai/StableBeluga2,Text Generation, UpdatedSep 18, 9.73k, 838
+01-ai/Yi-34B,Text Generation, Updatedabout 19 hours ago, 24.3k, 820
+meta-llama/Llama-2-7b-hf,Text Generation, Updated1 day ago, 515k, 804
