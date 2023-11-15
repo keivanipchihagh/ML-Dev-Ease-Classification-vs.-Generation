@@ -73,7 +73,7 @@ if __name__ == '__main__':
         _ = collect_data(models, tag)
         data.extend(_)
 
-    # Save as .svc
+    # Save as .csv
     pd.DataFrame(
         data = data
     ).to_csv('data/models.csv', index=False)
