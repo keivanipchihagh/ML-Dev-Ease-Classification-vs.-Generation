@@ -24,3 +24,8 @@ Another scraper is developed under `src/scrapers/spaces.py` which performs two t
 > Although it's very unlikely, parallelism could possibly result in DDOS attack, specially with higher process count, and thus should be used with caution.
 
 ### Step 2.5 - Comparing ML Apps Per Model
+Among the *175690* apps on [huggingface](https://huggingface.co/), only *38982* of them have specified models (roughly 22%). Subsequently, *4375* of them have used our top 40 selected models for text-classification and text-generation (less than 12%).
+
+Analyzing both `tag` and `pipeline_tag` have indicated that more text-genration usage is much higher.
+![n.models per tag](assets/img/tag.png)
+![n.models per pipeline_tag](assets/img/pipeline_tag.png)
