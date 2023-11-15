@@ -27,5 +27,8 @@ Another scraper is developed under `src/scrapers/spaces.py` which performs two t
 Among the *175690* apps on [huggingface](https://huggingface.co/), only *38982* of them have specified models (roughly 22%). Subsequently, *4375* of them have used our top 40 selected models for text-classification and text-generation (less than 12%).
 
 Analyzing both `tag` and `pipeline_tag` have indicated that more text-genration usage is much higher.
-![n.models per tag](assets/img/tag.png)
-![n.models per pipeline_tag](assets/img/pipeline_tag.png)
+
+<p float="left" style="text-align:center">
+  <img src="assets/img/tag.png" width="49%" /> 
+  <img src="assets/img/pipeline_tag.png" width="48.3%" />
+</p>
