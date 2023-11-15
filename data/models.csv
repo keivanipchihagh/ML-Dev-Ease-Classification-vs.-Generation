@@ -1,41 +1,41 @@
-name,tag,updated_at,downloads,likes
-ProsusAI/finbert,Text Classification, UpdatedMay 23, 2.37M, 376
-distilbert-base-uncased-finetuned-sst-2-english,Text Classification, Updated20 days ago, 42.1M, 341
-cardiffnlp/twitter-roberta-base-sentiment-latest,Text Classification, UpdatedMay 28, 1.26M, 259
-j-hartmann/emotion-english-distilroberta-base,Text Classification, UpdatedJan 2, 851k, 247
-cardiffnlp/twitter-roberta-base-sentiment,Text Classification, UpdatedJan 20, 10.1M, 220
-nlptown/bert-base-multilingual-uncased-sentiment,Text Classification, UpdatedJul 27, 1.73M, 201
-SamLowe/roberta-base-go_emotions,Text Classification, UpdatedOct 4, 6.57M, 171
-papluca/xlm-roberta-base-language-detection,Text Classification, Updated6 days ago, 397k, 150
-cardiffnlp/twitter-xlm-roberta-base-sentiment,Text Classification, UpdatedJul 19, 1.11M, 148
-OpenAssistant/reward-model-deberta-v3-large-v2,Text Classification, UpdatedFeb 1, 75.4k, 119
-mrm8488/distilroberta-finetuned-financial-news-sentiment-analysis,Text Classification, UpdatedMar 16, 6.03M, 114
-yiyanghkust/finbert-tone,Text Classification," UpdatedOct 17, 2022", 558k, 106
-roberta-large-mnli,Text Classification, UpdatedApr 6, 82.5k, 94
-unitary/toxic-bert,Text Classification, UpdatedAug 18, 87.3k, 89
-bhadresh-savani/distilbert-base-uncased-emotion,Text Classification, UpdatedMar 22, 76.8k, 86
-finiteautomata/bertweet-base-sentiment-analysis,Text Classification, UpdatedFeb 17, 146k, 85
-siebert/sentiment-roberta-large-english,Text Classification, UpdatedApr 2, 167k, 84
-roberta-base-openai-detector,Text Classification, UpdatedApr 30, 34.4k, 82
-arpanghoshal/EmoRoBERTa,Text Classification, UpdatedFeb 11, 12.6k, 79
-facebook/fasttext-language-identification,Text Classification, UpdatedJun 9,0, 65
-bigscience/bloom,Text Generation, UpdatedJul 28, 20.4k, 4.14k
-meta-llama/Llama-2-7b,Text Generation, Updated1 day ago,0, 2.97k
-bigcode/starcoder,Text Generation, UpdatedOct 5, 24.5k, 2.45k
-tiiuae/falcon-40b,Text Generation, UpdatedSep 29, 56.2k, 2.33k
-databricks/dolly-v2-12b,Text Generation, UpdatedJun 30, 13k, 1.89k
-mistralai/Mistral-7B-v0.1,Text Generation, UpdatedOct 12, 427k, 1.79k
-meta-llama/Llama-2-7b-chat-hf,Text Generation, Updated1 day ago, 876k, 1.77k
-meta-llama/Llama-2-70b-chat-hf,Text Generation, Updated1 day ago, 1.7M, 1.6k
-gpt2,Text Generation, UpdatedJun 30, 25.9M, 1.49k
-EleutherAI/gpt-j-6b,Text Generation, UpdatedJun 21, 128k, 1.3k
-tiiuae/falcon-40b-instruct,Text Generation, UpdatedSep 29, 782k, 1.11k
-mosaicml/mpt-7b,Text Generation, Updated15 days ago, 84.4k, 1.09k
-microsoft/phi-1_5,Text Generation, Updated13 days ago, 72.6k, 1.03k
-mistralai/Mistral-7B-Instruct-v0.1,Text Generation, UpdatedOct 11, 272k, 1.01k
-HuggingFaceH4/zephyr-7b-alpha,Text Generation, Updated20 days ago, 90.3k, 947
-tiiuae/falcon-7b,Text Generation, UpdatedSep 29, 132k, 918
-tiiuae/falcon-180B,Text Generation, UpdatedSep 6, 16.2k, 899
-stabilityai/StableBeluga2,Text Generation, UpdatedSep 18, 9.73k, 838
-01-ai/Yi-34B,Text Generation, Updatedabout 19 hours ago, 24.3k, 820
-meta-llama/Llama-2-7b-hf,Text Generation, Updated1 day ago, 515k, 804
+name,author,last_modified,downloads,likes,pipeline_tag,tag
+facebook/bart-large-mnli,facebook,2023-09-05 14:49:34+00:00,3068899,734,zero-shot-classification,text-classification
+hkunlp/instructor-xl,hkunlp,2023-01-21 06:33:27+00:00,37289,419,sentence-similarity,text-classification
+ProsusAI/finbert,ProsusAI,2023-05-23 12:43:35+00:00,2372308,376,text-classification,text-classification
+hkunlp/instructor-large,hkunlp,2023-04-21 06:04:33+00:00,177089,343,sentence-similarity,text-classification
+distilbert-base-uncased-finetuned-sst-2-english,,2023-10-26 16:14:11+00:00,40829344,341,text-classification,text-classification
+cardiffnlp/twitter-roberta-base-sentiment-latest,cardiffnlp,2023-05-28 05:45:10+00:00,1262795,259,text-classification,text-classification
+j-hartmann/emotion-english-distilroberta-base,j-hartmann,2023-01-02 13:03:10+00:00,851415,247,text-classification,text-classification
+cardiffnlp/twitter-roberta-base-sentiment,cardiffnlp,2023-01-20 09:52:13+00:00,10109527,220,text-classification,text-classification
+nlptown/bert-base-multilingual-uncased-sentiment,nlptown,2023-07-27 18:14:29+00:00,1732576,201,text-classification,text-classification
+SamLowe/roberta-base-go_emotions,SamLowe,2023-10-04 10:00:58+00:00,6574362,171,text-classification,text-classification
+MoritzLaurer/mDeBERTa-v3-base-mnli-xnli,MoritzLaurer,2023-03-22 08:35:38+00:00,67615,166,zero-shot-classification,text-classification
+joeddav/xlm-roberta-large-xnli,joeddav,2023-03-22 18:23:34+00:00,13609,164,zero-shot-classification,text-classification
+papluca/xlm-roberta-base-language-detection,papluca,2023-11-09 11:14:27+00:00,396547,150,text-classification,text-classification
+cardiffnlp/twitter-xlm-roberta-base-sentiment,cardiffnlp,2023-07-19 20:41:38+00:00,1107787,148,text-classification,text-classification
+MoritzLaurer/mDeBERTa-v3-base-xnli-multilingual-nli-2mil7,MoritzLaurer,2023-03-20 08:26:54+00:00,99257,131,zero-shot-classification,text-classification
+OpenAssistant/reward-model-deberta-v3-large-v2,OpenAssistant,2023-02-01 00:55:05+00:00,75380,119,text-classification,text-classification
+mrm8488/distilroberta-finetuned-financial-news-sentiment-analysis,mrm8488,2023-03-16 20:03:13+00:00,6033964,114,text-classification,text-classification
+MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli,MoritzLaurer,2023-03-20 08:28:44+00:00,7787482,109,zero-shot-classification,text-classification
+yiyanghkust/finbert-tone,yiyanghkust,2022-10-17 00:35:39+00:00,557597,106,text-classification,text-classification
+roberta-large-mnli,,2023-04-06 13:40:16+00:00,82301,94,text-classification,text-classification
+bigscience/bloom,bigscience,2023-07-28 17:50:20+00:00,20427,4145,text-generation,text-generation
+meta-llama/Llama-2-7b,meta-llama,2023-11-13 16:31:01+00:00,0,2975,text-generation,text-generation
+bigcode/starcoder,bigcode,2023-10-05 09:24:35+00:00,24494,2451,text-generation,text-generation
+tiiuae/falcon-40b,tiiuae,2023-09-29 14:32:25+00:00,56168,2328,text-generation,text-generation
+databricks/dolly-v2-12b,databricks,2023-06-30 18:33:03+00:00,12976,1889,text-generation,text-generation
+mistralai/Mistral-7B-v0.1,mistralai,2023-10-12 17:52:53+00:00,427429,1788,text-generation,text-generation
+meta-llama/Llama-2-7b-chat-hf,meta-llama,2023-11-13 16:32:10+00:00,876424,1770,text-generation,text-generation
+meta-llama/Llama-2-70b-chat-hf,meta-llama,2023-11-13 16:28:44+00:00,1700631,1604,text-generation,text-generation
+gpt2,,2023-06-30 02:19:43+00:00,26182664,1491,text-generation,text-generation
+EleutherAI/gpt-j-6b,EleutherAI,2023-06-21 14:33:36+00:00,131140,1303,text-generation,text-generation
+tiiuae/falcon-40b-instruct,tiiuae,2023-09-29 14:32:27+00:00,782272,1114,text-generation,text-generation
+mosaicml/mpt-7b,mosaicml,2023-10-30 21:53:24+00:00,84428,1094,text-generation,text-generation
+microsoft/phi-1_5,microsoft,2023-11-01 23:40:19+00:00,72604,1025,text-generation,text-generation
+mistralai/Mistral-7B-Instruct-v0.1,mistralai,2023-10-11 12:31:14+00:00,271512,1006,text-generation,text-generation
+HuggingFaceH4/zephyr-7b-alpha,HuggingFaceH4,2023-10-26 08:18:58+00:00,90274,947,text-generation,text-generation
+tiiuae/falcon-7b,tiiuae,2023-09-29 14:32:19+00:00,132326,918,text-generation,text-generation
+tiiuae/falcon-180B,tiiuae,2023-09-06 13:04:38+00:00,16166,899,text-generation,text-generation
+stabilityai/StableBeluga2,stabilityai,2023-09-18 15:55:32+00:00,9731,838,text-generation,text-generation
+01-ai/Yi-34B,01-ai,2023-11-15 06:59:21+00:00,24308,820,text-generation,text-generation
+meta-llama/Llama-2-7b-hf,meta-llama,2023-11-13 16:31:26+00:00,514832,804,text-generation,text-generation

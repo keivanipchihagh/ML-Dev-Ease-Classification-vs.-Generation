@@ -7,14 +7,14 @@
 #
 ##########################################################
 
-import requests
 import pandas as pd
-from typing import List
-from bs4 import BeautifulSoup
+import huggingface_hub
+from typing import Iterable, List
 from argparse import ArgumentParser
+from huggingface_hub.hf_api import ModelInfo
 
 # Constants
-PIPELINE_TAGS = ['text-classification', 'text-generation']
+TAGS = ['text-classification', 'text-generation']
 
 
 def load_args() -> dict:
@@ -31,67 +31,49 @@ def load_args() -> dict:
 
 
 
-def retrieve_models(pipeline_tag: str, sort: str) -> List[list]:
+def collect_data(models: Iterable[ModelInfo], tag: str) -> List[dict]:
     """
-        Retrieves models details
+        Collects model data
 
-        Arguments:
-            pipeline_tag (str): Model type to retrive
-            sort (str): Sorting strategy
+        Parameters:
+            models (Iterable[ModelInfo]): Models iterable
+            tag (str): Tag for the models
         Returns:
-            (List[list]): List of models' details
+            (List[dict]): List of dictionaries containing data for each model
     """
-
-    # Retrieve URL content
-    response = requests.get(
-        url = "https://huggingface.co/models",
-        params = {
-            "pipeline_tag": pipeline_tag,   # Model type
-            "sort": sort                    # Sorting strategy
-        },
-        headers = {
-            "User-Agent": "Mozilla/5.0"     # Avoid being detected as bot
-        }
-    )
-
-    soup = BeautifulSoup(response.content, "html.parser")
-    elements = soup.find_all(
-        name = "article",                   # Element name
-        attrs = {"class": "group/repo"}     # Element classes
-    )
-
-    models: List[list] = []
-    for element in elements:
-        name: str = element.find('h4').text # Model name
-        text: str = element.div.text        # Model details as text
-
-        # Post-process
-        text = text.replace('\n', '')       # Remove newlines
-        text = text.replace('\t', '')       # Remove tabs
-        details = text.split('•')           # Split to a list
-        details.insert(0, name)             # Insert model name
-        if len(details) == 4:
-            details.insert(3, 0)            # In case it has no downloads
-
-        models.append(details)
-    
-    return models
-
+    data = []
+    for _ in models:
+        data.append({
+            'name': _.id,
+            'author': _.author,
+            'last_modified': _.last_modified,
+            'downloads': _.downloads,
+            'likes': _.likes,
+            'pipeline_tag': _.pipeline_tag,
+            'tag': tag,
+        })
+    return data
 
 
 if __name__ == '__main__':
     args = load_args()      # Load CMD Arguments
 
-    # Retrieve all model types
-    models: list = []
-    for pipeline_tag in PIPELINE_TAGS:
-        _ = retrieve_models(pipeline_tag, args.sort)
-        _ = _[:args.count]  # Filter the top n items
-        models.extend(_)
+    data = []
+    for tag in TAGS:
+        # Retrieve Models from HuggingFace
+        models = huggingface_hub.list_models(
+            filter = tag,
+            sort = args.sort,   # Sort strategy
+            direction = -1,     # Sort Desending
+            limit = args.count, # Top n
+            full = True,        # Also fetch most model data
+        )
 
-    # Construct DataFrame
-    df = pd.DataFrame(
-        data = models,
-        columns = ['name', 'tag', 'updated_at', 'downloads', 'likes']
-    )
-    df.to_csv('data/models.csv', index=False)
+        # Collect data
+        _ = collect_data(models, tag)
+        data.extend(_)
+
+    # Save as .svc
+    pd.DataFrame(
+        data = data
+    ).to_csv('data/models.csv', index=False)
