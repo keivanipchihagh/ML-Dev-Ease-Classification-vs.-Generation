@@ -38,15 +38,30 @@ Moreover, another chart shows usage of both "tag" and "pipeline_tag" for each ca
 [Optional] Out of curiosity, plotting the distribution for the number of models used in spaces showed that several **"text-generation"** models are more commonly used together. This can indicate that it might be easier to maintain several of them at the same time:
 <img src="assets/img/spaces_models_dist.png" width="100%" />
 
-In conclusion, by looking at both charts, it can be noted that **"text generation"** is a far more frequently used category than "text classification". However, I personally don't believe model usage is a good indicator of *"ease of use of software developer"*.
+In conclusion, by looking at both charts, it can be noted that **"text generation"** is a far more frequently used category than "text classification". However, I believe we can't directly assume the ease-of-use only based on popularity and usage frequency.
 
 ### Step 3 - Obtain ML Codebase size
 For this purpose, a scraper was developed under [files.py](src/scrapers/files.py) that reads both *the number of files* and *the sum of all file sizes*. Subsequently, determining the size of each file doesn't require downloading it, but instead making a [HEAD](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/HEAD) request to the files URL and analyzing *Content-Length* parameter would give us the filesize.
 
 In more technical details, parallelism was also used in this step (with 64 processes, twice the number used in step 2) solely to speed up the scraping process. This was needed as repositories with hundreds or thousands of files would dramatically slow down the scraping if done on a single process. Moreover, some preprocessing was done to limit the scope to spaces that only have used our selected models from step 1, utilizing files [spaces_extra.csv](data/spaces_extra.csv) and [models.csv](data/models.csv). This was crucial as scraping all *175k* repositories would take forever, and not all the spaces are needed for our analysis.
 
-### Step 3.5 - Comparing ML Repositories
+> **Note**
+> Some repositories contained over 1000 files and they would take a long time to scrape. Due to time constraints, I decided to exclude these repositories and only keep the *n_files* to be analyzed.
 
+### Step 3.5 - Comparing ML Repositories
+Analysis done on repositories' sizes indicate the ones with "text classification" models tend to be larger in size with over 10 repositories exceeding 100MB. The case doesn't appear with "text generation" repositories where the largest one is only about 70MB.
+
+| Statistics  | Text Classification | Text Generation |
+| ------------- | ------------- | ------------- |
+| Mean  |  **2.6MB**  |  0.6MB  |
+| Min  |  **1.3KB**  |  0.7KB  |
+| 25%  |  1.7KB  |  **1.8KB**  |
+| 50%  |  **10KB**  |  8KB  |
+| 75%  |  **0.2MB**  |  142KB  |
+| Max  |  **135MB**  |  74MB  |
+
+Histograms provide a more visual understanding of matter:
+<img src="assets/img/repo_size_dist.png" width="100%" />
 
 ## Step 4 - Further analysis
 In this section, I went over a few more analyses that I believe are also helpful and can further shed light on the understanding of the matter.
