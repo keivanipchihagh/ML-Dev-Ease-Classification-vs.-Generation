@@ -7,7 +7,6 @@
 #
 ##########################################################
 
-import os
 import pandas as pd
 import huggingface_hub
 from dotenv import load_dotenv
@@ -50,6 +49,7 @@ def collect_space_info(row: pd.Series) -> pd.Series:
         Returns:
             (pd.Series): Modified row
     """
+    import os
     import huggingface_hub
     TOKEN = os.getenv("HUGGING_FACE_TOKEN")
 
@@ -64,11 +64,6 @@ def collect_space_info(row: pd.Series) -> pd.Series:
         row['models'] = _.models
     except:
         row['models'] = None
-    # datasets (may not be available)
-    try:
-        row['datasets'] = _.models
-    except:
-        row['datasets'] = None
 
     return row
 
