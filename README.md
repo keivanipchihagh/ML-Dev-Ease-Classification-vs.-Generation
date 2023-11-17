@@ -7,6 +7,7 @@ An Exploratory (Data) Analysis on Development Ease in ML Applications - Text Cla
 - [Step 2 - Obtaining ML Spaces](https://github.com/keivanipchihagh/ML-Dev-Ease-Classification-vs.-Generation#step-2---obtaining-ml-spaces)
   - [Step 2.5 - Comparing ML Apps](https://github.com/keivanipchihagh/ML-Dev-Ease-Classification-vs.-Generation#step-25---comparing-ml-apps)
 - [Step 3 - Obtain ML Codebase size](https://github.com/keivanipchihagh/ML-Dev-Ease-Classification-vs.-Generation#step-3---obtain-ml-codebase-size)
+  - [Step 3.5 - Comparing ML Repositories](https://github.com/keivanipchihagh/ML-Dev-Ease-Classification-vs.-Generation#step-35---comparing-ml-repository)
 - [Step 4 - Fruther analysis](https://github.com/keivanipchihagh/ML-Dev-Ease-Classification-vs.-Generation#step-4---fruther-analysis)
   - [Number of files / Lines of Code](https://github.com/keivanipchihagh/ML-Dev-Ease-Classification-vs.-Generation#number-of-files--lines-of-code)
   - [Dependencies Analysis](https://github.com/keivanipchihagh/ML-Dev-Ease-Classification-vs.-Generation#dependencies-analysis)
@@ -26,23 +27,25 @@ Another scraper is developed under [spaces.py](src/scrapers/spaces.py) which per
 **Why parallelism?** [Back-of-the-envelope](https://en.wikipedia.org/wiki/Back-of-the-envelope_calculation) calculation shows that with a throughput of 2 RPS (Request Per Second), it would take ~24 hours to fetch all 175k spaces, while utilizing 32 processes would take less than an hour. The number of processes could be increased further, but that could simulate a small DDOS attack. Although I believe this wouldn't generate much load for the API servers, I didn't increase them any more.
 
 ### Step 2.5 - Comparing ML Apps
-Among the 175690 apps on [huggingface](https://huggingface.co/), only 38982 of them have specified models (roughly 22%). Subsequently, 4375 of them have used our top 40 selected models for "text classification" and "text generation" (less than 12%).
+Among the 175690 apps on [huggingface](https://huggingface.co/), only 38982 of them have specified models (roughly 22%), and thus are used in the analysis. Subsequently, our selected models have been used only 4375 times (~11%) distributed among 3737 spaces (2% of all spaces).
 
-Analyzing both `tag` and `pipeline_tag` indicates that more models for **"text generation"** are used.
+The following chart shows model usage in spaces per category. It's evident that "text generation" models are more widespread than "text classification":
+<img src="assets/img/models_usage.png" width="100%" />
 
-<p float="left" style="text-align:center">
-  <img src="assets/img/tag.png" width="49%" /> 
-  <img src="assets/img/pipeline_tag.png" width="48.2%" />
-</p>
+Moreover, another chart shows usage of both "tag" and "pipeline_tag" for each category, which strengthens the assumption that more **"text-generation"** tags are used in general:
+<img src="assets/img/tags.png" width="100%" />
 
-However, looking at number of downloads for both categories, "text generation" is far more frequently used which explains the results we obtained previously. This is actually a bias, and does not account for "ease of usage by software developers".
+[Optional] Out of curiosity, plotting the distribution for the number of models used in spaces showed that several **"text-generation"** models are more commonly used together. This can indicate that it might be easier to maintain several of them at the same time:
+<img src="assets/img/spaces_models_dist.png" width="100%" />
+
+In conclusion, by looking at both charts, it can be noted that **"text generation"** is a far more frequently used category than "text classification". However, I personally don't believe model usage is a good indicator of *"ease of use of software developer"*.
 
 ### Step 3 - Obtain ML Codebase size
 For this purpose, a scraper was developed under [files.py](src/scrapers/files.py) that reads both *the number of files* and *the sum of all file sizes*. Subsequently, determining the size of each file doesn't require downloading it, but instead making a [HEAD](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/HEAD) request to the files URL and analyzing *Content-Length* parameter would give us the filesize.
 
 In more technical details, parallelism was also used in this step (with 64 processes, twice the number used in step 2) solely to speed up the scraping process. This was needed as repositories with hundreds or thousands of files would dramatically slow down the scraping if done on a single process. Moreover, some preprocessing was done to limit the scope to spaces that only have used our selected models from step 1, utilizing files [spaces_extra.csv](data/spaces_extra.csv) and [models.csv](data/models.csv). This was crucial as scraping all *175k* repositories would take forever, and not all the spaces are needed for our analysis.
 
-### Step 3.5 - Comparing Repository sizes
+### Step 3.5 - Comparing ML Repositories
 
 
 ## Step 4 - Further analysis
